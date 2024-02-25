@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <title>Login Screen</title>
+    <script src="{{url_for('static',filename='customerLoginScreen.js')}}"></script>
+    <style>
+        h1{
+            text-align: center;
+            color: royalblue;
+        }
+        h2{
+            text-align: center;
+            color: #a5652a;
+        }
+        
+        @media only screen and (max-width:800px){
+            .home{            
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+        @media only screen and (min-width:800px){
+            .home{     
+                width: 80%;
+                margin-left: 10%;       
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+        }
+        .container{
+            text-align: left;
+            
+        }
+        input{
+            width: 150px;
+            height: 20px;
+        }
+        button{
+            background-color: rgb(0, 217, 255);
+            margin: 20px;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            border-style: none;
+        }
+        .center-align{
+            text-align: center;
+        }
+        span{
+            color: red;
+        }
+        .mar{
+            margin-left: 655px;
+        }
+    
+        .welcome{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+            margin-right: 30px;
+        }
+        
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <div>
+        <h1>QVY Insurance Online</h1>
+        <br>
+        <div class="welcome">
+            <a style="font-size: 20px;">Welcome <span id="welcomeUser" style="color: black; font-size: 20px;">{{name}}</span>  |</a>
+            <a href="/login" style="color: black; font-size: 20px;" >Logout</a>
+        </div>
+        <hr style="width: 90%; border: 1px solid hsl(0, 2%, 46%); margin-bottom: 6px;">
+        <div  class="home">
+            <a href="/choosepolicy" style="color: #00c3ff; font-size: 20px;">Choose Plolicy</a>
+            <a style="color: #1e2122;  font-size: 20px; font-weight: bold;">|</a>
+            <a href="/viewpolicy" style="color: #00c3ff;  font-size: 20px;">View Your Ploicies</a>
+            <a style="color: #1e2122;  font-size: 20px; font-weight: bold;">|</a>
+            <a href="/v2" style="color: #00c3ff;  font-size: 20px;">Delete Policy</a>
+            <a style="color: #1e2122;  font-size: 20px; font-weight: bold;">|</a>
+            <a href="/v3" style="color: #00c3ff;  font-size: 20px;">Update Policy</a>
+        </div>
+        <hr style="width: 90%; border: 1px solid hsl(0, 1%, 45%); margin-top: 6px;">
+        <h2>Customer Home Page</h2>
+    </div>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        h1,h2{
+            text-align: center;
+            color: royalblue;
+        }
+        label{
+            color: royalblue;
+            width: 150px;
+            font-weight: bold;
+            display: inline-block;text-align: left;
+            margin-left: 500px;
+        }
+        .container{
+            text-align: left;
+        
+        }
+        input{
+            width: 200px;
+        }
+        
+        .left-align{
+            text-align: left;
+        }
+        .right-align{
+            text-align: right;
+        }
+        .center-align{
+            text-align: center;
+        }
+        span{
+            color: red;
+        }
+        button{
+            background-color: rgb(0, 217, 255);
+            margin: 20px;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            border-style: none;
+        }
+        p{
+            color: black;
+            font-size: 20px;
+            text-align: center;
+        }
+        .backtoLogin{
+            color: blue;
+            font-size: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div >
+        <h1>QVY Insurance Online</h1>
+        <h2>Customer Registration</h2>
+        <br>
+        <h2 style="color: green;">Customer Registered Succesfully</h2>
+        <div>
+            <p>Customer Id      : <span id="one" style="color: black; font-size: 20px; text-align: center;"></span></p>
+            <p>Customer Name    : <span id="two" style="color: black; font-size: 20px; text-align: center;"></span></p>
+            <p>MailId           : <span id="three" style="color: black; font-size: 20px; text-align: center;"></span></p>
+        </div>
+        <br>
+        <br>
+        <div class="backtoLogin">
+            <a href="/login">Back to login</a>
+        </div>
+    </div>
+    <script>
+        ob=JSON.parse(localStorage.getItem("ob"));
+        console.log(ob);
+        document.getElementById("one").textContent=`${ob.cid}`;
+        document.getElementById("two").textContent=`${ob.cname}`;
+        document.getElementById("three").textContent=`${ob.em}`;
+    </script>
+</body>
+</html>

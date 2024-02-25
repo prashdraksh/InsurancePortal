@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<head>
+    <title>Login Screen</title>
+    <script src="{{url_for('static',filename='customerLoginScreen.js')}}"></script>
+    <style>
+        h1{
+            text-align: center;
+            color: royalblue;
+        }
+        h2{
+            text-align: center;
+            color: #a5652a;
+        }
+        @media only screen and (min-width:800px){
+            label{
+                color: royalblue;
+                width: 150px;
+                display: inline-block;
+                text-align: left;
+                margin-left: 40%;
+                font-size: 20px;
+            }
+        }
+        @media only screen and (min-width:600px) and (max-width:800px){
+            label{
+                color: royalblue;
+                width: 150px;
+                display: inline-block;
+                text-align: left;
+                margin-left: 30%;
+                font-size: 20px;
+            }
+        }
+        @media only screen and (max-width:600px){
+            label{
+                color: royalblue;
+                width: 150px;
+                display: inline-block;
+                text-align: left;
+                margin-left: 20%;
+                font-size: 20px;
+            }
+        }
+        .container{
+            text-align: left;
+            
+        }
+        input{
+            width: 150px;
+            height: 20px;
+        }
+        button{
+            background-color: rgb(0, 217, 255);
+            margin: 20px;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            border-style: none;
+        }
+        .center-align{
+            text-align: center;
+        }
+        span{
+            color: red;
+        }
+        .mar{
+            margin-left: 655px;
+        }
+    
+        .welcome{
+            display: flex;
+            flex-direction: row;
+            justify-content: end;
+        }
+        .home{
+            width: 40%;
+            margin-left: 400px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    <div id="section3">
+        <h1>QVY Insurance Online</h1>
+        <br>
+        <br>
+        <form  class="container" action="/succlogin" method="POST">
+            <div>
+                <label for="username">User Id <span>*</span></label>
+                <input type="number" id="username" name="username" required/>
+            </div>
+            <span class="mar" id="user"></span>
+            <br>
+            <br>
+            <div>
+                <label for="password">Password <span>*</span></label>
+                <input type="password" id="password" name="password" required/>
+            </div>
+            <span class="mar" id="pass"></span>
+            <br>
+            <br>
+            <div class="center-align">
+                <button onclick="loginBtn()">Login</button>
+                <a href="/">Register New User</a>
+            </div>
+        </form>
+        
+    </div>
+    
+</body>
+</html>

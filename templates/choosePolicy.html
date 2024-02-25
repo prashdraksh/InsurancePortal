@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<head>
+    <title>Choose Policy</title>
+    <script src="{{url_for('static',filename='choosePolicy.js')}}"></script>
+    <style>
+         h1,h2{
+            text-align: center;
+            color: royalblue;
+         }
+         @media only screen and (min-width:800px) and (max-width:1000px){
+            label{
+                color: black;
+                width: 130px;
+                display: inline-block;
+                text-align: left;
+                margin-left: 33%;
+                font-size: 20px;
+            }
+        }
+        @media only screen and (min-width:600px) and (max-width:800px){
+            label{
+                color: black;
+                width: 130px;
+                display: inline-block;
+                text-align: left;
+                margin-left: 28%;
+                font-size: 20px;
+            }
+        }
+        @media only screen and (max-width:600px){
+            label{
+                color: black;
+                width: 130px;
+                display: inline-block;
+                text-align: left;
+                margin-left: 23%;
+                font-size: 20px;
+            }
+        }
+        @media only screen and (min-width:1000px){
+            label{
+                color: black;
+                width: 130px;
+                display: inline-block;
+                text-align: left;
+                margin-left: 38%;
+                font-size: 20px;
+            }
+        }
+         select{
+             width: 150px;
+             height: 25px;
+         }
+         .row{
+             display: flex;
+             justify-content: center;
+             
+         }
+         .row2{
+             display: flex;
+             justify-content: center;
+             
+         }
+         
+         button{
+            background-color: #0051ff;
+            margin: 20px;
+            padding: 10px;
+            color: white;
+            border-radius: 5px;
+            border-style: none;
+         }
+         a{
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>QVY Insurance Online</h1>
+        <h2>Choose Policy</h2>
+        <br>
+        <br>
+        <form action="/choosepolicy" method="POST">
+            <div>
+                <label for="title1">Policy Type</label>
+                <select id="title1" name="title1"  onchange="firstDropdown()" required>
+                    <option value="" disabled selected>Please Select</option>
+                    <option value="GeneralInsurance"  id="GeneralInsurance" name="GeneralInsurance">General Insurance</option>
+                    <option value="HealthInsurance" id="HealthInsurance" name="HealthInsurance">Health Insurance</option>
+                    <option value="MotorInsurance" id="MotorInsurance" name="MotorInsurance">Motor Insurance</option>
+                </select>
+            </div>
+            <br>
+            <div>
+                <label for="title2">Policy Title</label>
+                <select id="title2" name="title2" onchange="SecondDropdown()" required>
+                    <option value="" disabled selected>Please Select</option>
+                </select>
+            </div>
+            <br>
+            <br>
+            <div class="container">
+                <div class="row">
+                    <p style="font-size: 20px; color: royalblue;">Sum Assured(Rs)</p>
+                    <div style="align-self: center; margin: 15px; text-align: center;">
+                        <input style="color: black; font-size: 20px; width: 100px;" id="sumAssured" name="sumAssured" readonly/>
+                    </div>
+                    <p style="font-size: 20px; color: royalblue;">Premium Amount(Rs)</p>
+                    <div style="align-self: center; margin: 15px; text-align: center;">
+                        <input style="color: black; font-size: 20px; width: 100px;"  id="premAmount" name="premAmount"required/>
+                    </div>
+                </div>
+                <div class="row2">
+                    <p style="font-size: 20px; color: royalblue;">Policy Terms(Yrs)</p>
+                    <div style="align-self: center; margin: 15px; text-align: center;">
+                        <input style="color: black; font-size: 20px; width: 100px;" id="policyTerm" name="policyTerm" required/>
+                    </div>
+                </div>
+                <div style="text-align: center; ">
+                    <button type="button" onclick="func()">View</button>
+                </div>
+            </div>
+            <div style="display: flex; flex-direction: row; justify-content: center;">
+                <div style="text-align: center;">
+                    <button type="submit" onclick="selectPolicyBtn()">Select Policy</button>
+                </div>
+                <div style="text-align: center; ">
+                    <button><a href="/insurence"> Home</a></button>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</body>
+</html>
